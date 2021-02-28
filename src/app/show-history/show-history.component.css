@@ -38,6 +38,11 @@ li{
   color: #c2c3c4;
 }
 
+.comment{
+  word-wrap: break-word;
+  width: 100%;
+}
+
 @media screen and (max-width: 575px){
 
   #text {
@@ -46,6 +51,10 @@ li{
     width: 250px;
     white-space: nowrap;
   }
+
+  /*.comment {
+    text-align: center;
+  }*/
 
 
 }

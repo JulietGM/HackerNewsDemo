@@ -29,7 +29,6 @@ export class ShowHistoryComponent implements OnInit {
 
   getInfo(): void{
     this.s.InfoHistory(this.id_history).subscribe((data: any) => {
-       (data);
       this.data_history = data;
       this.covertUnixTime(this.data_history.time);
     });
@@ -53,8 +52,7 @@ export class ShowHistoryComponent implements OnInit {
   }
 
   ShowComent(content, kids): void {
-     (kids);
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'lg'}).result.then((result) => {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'xl'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -63,13 +61,10 @@ export class ShowHistoryComponent implements OnInit {
   }
 
   getComents(kids): void{
-     (kids);
     this.ids_comments = kids.slice(0, 20);
-     (this.ids_comments);
     this.ids_comments.forEach((id, index) => {
       this.s.InfoComents(id).subscribe( (data) => {
         this.arrayComments[index] = data;
-         ( this.arrayComments);
       });
     });
   }

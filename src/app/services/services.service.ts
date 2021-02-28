@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import  {urlapi} from '../../environments/environment';
-import  {HttpClient} from '@angular/common/http';
+
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
@@ -9,18 +9,20 @@ import {map} from 'rxjs/operators';
 })
 export class ServicesService {
 
+  urlapi = 'https://hacker-news.firebaseio.com/v0/';
+
   constructor( public http: HttpClient) { }
 
   BestHistorys(): Observable<any> {
-    return this.http.get(urlapi + 'beststories.json?print=pritty').pipe( map ( data => data));
+    return this.http.get(this.urlapi + 'beststories.json?print=pritty').pipe( map ( data => data));
   }
 
   InfoHistory(id): Observable<any> {
-    return this.http.get(urlapi + 'item/' + id + '.json?print=pretty').pipe( map ( data => data));
+    return this.http.get(this.urlapi + 'item/' + id + '.json?print=pretty').pipe( map ( data => data));
   }
 
   InfoComents(id): Observable<any> {
-    return this.http.get(urlapi + 'item/' + id + '.json?print=pretty').pipe(map (data => data));
+    return this.http.get(this.urlapi + 'item/' + id + '.json?print=pretty').pipe(map (data => data));
   }
 
 

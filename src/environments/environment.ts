@@ -5,7 +5,7 @@
 export const environment = {
   production: false
 };
-export const urlapi = 'https://hacker-news.firebaseio.com/v0/';
+
 
 /* traer todo el json de id para obtener "besthistorys", manejarlo con un arreglo donde solo tome los 10 mejores
 y sobre ese arreglo obtener la inf de cada uno

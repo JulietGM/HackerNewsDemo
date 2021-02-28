@@ -18,7 +18,7 @@ export class HistoryComponent implements OnInit {
   TenBestHistorys: any = [];
   arrayHistorys: any = [];
   closeResult: string;
-  urlImages = '../../assets/img/';
+  urlImages = 'assets/img/';
   images = [this.urlImages + 'img_13.png', this.urlImages + 'img_7.png', this.urlImages + 'img_11.png'];
 
   ngOnInit(): void {
@@ -35,7 +35,6 @@ export class HistoryComponent implements OnInit {
       this.TenBestHistorys.forEach((id, index) => {
         this.s.InfoHistory(id).subscribe(( inf: any) => {
           this.arrayHistorys[index] = inf;
-           (this.arrayHistorys);
         });
       });
     });
