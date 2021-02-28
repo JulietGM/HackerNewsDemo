@@ -1,0 +1,53 @@
+
+.card{
+  width: 100% !important;
+  background: #111111;
+  color: #c2c3c4;
+}
+
+li{
+  background: #111111;
+  color: #c2c3c4;
+  text-align: center;
+}
+
+.modal-header{
+  background: #111111;
+  color: #c2c3c4;
+}
+.modal-body{
+  background: #111111;
+  color: #c2c3c4;
+}
+
+
+.close{
+  color: #c2c3c4;
+}
+
+#text{
+  text-align: center;
+}
+
+#notext{
+  text-align: center;
+  color: #888888;
+}
+
+.urlPost{
+  color: #c2c3c4;
+}
+
+@media screen and (max-width: 575px){
+
+  #text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 250px;
+    white-space: nowrap;
+  }
+
+
+}
+
+

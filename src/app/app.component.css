@@ -1,0 +1,103 @@
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #111111;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #111111;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.toolbar svg{
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo {
+  height: 40px;
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo:hover {
+  opacity: 0.8;
+}
+
+.content {
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.logo {
+  font-family: "Crema cake";
+  color: #c2c3c4;
+}
+
+#user {
+  color: #c2c3c4;
+}
+
+@media screen and (max-width: 575px){
+  #user span {
+   display: none;
+  }
+
+}
+
+@font-face {
+  font-family: Crema cake;
+  src: url('../assets/fonts/Cream Cake.ttf');
+}
+
+footer .first {
+ background: #111111;
+}
+
+footer .second {
+  background: #0e0e0e;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+}
+

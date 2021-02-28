@@ -1,0 +1,58 @@
+<div class="card-container">
+  <div class="card" style="width: 18rem;">
+    <img src="../../assets/img/img.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{data_history.title}}</h5>
+      <p>By: <b>{{data_history.by}}</b> | Date: <b>{{date_publication}}</b> </p>
+      <hr>
+      <p class="card-text" id="text" *ngIf="data_history.text">{{data_history.text}}</p>
+      <p class="card-text" id="notext" *ngIf="!data_history.text">No Data</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <h4>
+          <svg xmlns="http://www.w3.org/2000/svg" fill= "#c2c3c4" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M24 3c-.372 4.105-2.808 8.091-6.873 9.438.297-.552.596-1.145.882-1.783 2.915-1.521 4.037-4.25 4.464-6.251h-2.688c.059-.45.103-.922.139-1.405h4.076zm-24 0c.372 4.105 2.808 8.091 6.873 9.438-.297-.552-.596-1.145-.882-1.783-2.915-1.521-4.037-4.25-4.464-6.251h2.688c-.058-.449-.102-.922-.138-1.404h-4.077zm16.921 0c-.368 4.506-1.953 7.23-3.372 9.669-.577.993-1.136 1.953-1.543 2.95-.408-.998-.969-1.959-1.548-2.953-1.422-2.437-3.011-5.161-3.379-9.666h9.842zm2.079-2h-14c0 9.803 5.105 13.053 5.604 17h2.805c.497-3.947 5.591-7.197 5.591-17zm-7 11.547c-1.125-2.563-1.849-5.599-1.857-8.547h-1.383c.374 3.118 1.857 7.023 3.24 8.547zm1.438 6.453h-2.866c-.202 1.187-.63 2.619-2.571 2.619v1.381h8v-1.381c-1.999 0-2.371-1.432-2.563-2.619z"/>
+          </svg> Score: {{data_history.score}}
+        </h4>
+      </li>
+      <li class="list-group-item"><a class="urlPost" href="{{data_history.url}}">Click here to view complete post </a></li>
+      <li class="list-group-item">
+        <a type="button" (click)="ShowComent(content, data_history.kids);">
+          Show comments
+          <svg fill= "#c2c3c4" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 1c-6.338 0-12 4.226-12 10.007 0 2.05.739 4.063 2.047 5.625l-1.993 6.368 6.946-3c1.705.439 3.334.641 4.864.641 7.174 0 12.136-4.439 12.136-9.634 0-5.812-5.701-10.007-12-10.007zm0 1c6.065 0 11 4.041 11 9.007 0 4.922-4.787 8.634-11.136 8.634-1.881 0-3.401-.299-4.946-.695l-5.258 2.271 1.505-4.808c-1.308-1.564-2.165-3.128-2.165-5.402 0-4.966 4.935-9.007 11-9.007zm-5 7.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm5 0c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm5 0c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5z"/></svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #content let-modal >
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Comments</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+      <div *ngFor="let c of arrayComments">
+
+        <div class="row">
+          <div class="col-2 name">
+            <svg xmlns="http://www.w3.org/2000/svg"  fill="#565656" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 22c-3.123 0-5.914-1.441-7.749-3.69.259-.588.783-.995 1.867-1.246 2.244-.518 4.459-.981 3.393-2.945-3.155-5.82-.899-9.119 2.489-9.119 3.322 0 5.634 3.177 2.489 9.119-1.035 1.952 1.1 2.416 3.393 2.945 1.082.25 1.61.655 1.871 1.241-1.836 2.253-4.628 3.695-7.753 3.695z"/></svg>
+            <p>{{c?.by}}</p>
+          </div>
+          <div class="col-10">
+            <div class=" col-12 comment">
+              <p>{{c?.text}}</p>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+
+    </div>
+
+  </ng-template>
+
+</div>
